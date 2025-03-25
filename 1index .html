@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oshiya Design Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-black text-white py-5">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-3xl font-bold">Oshiya Design Lab</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#services" class="hover:text-gray-400">Services</a></li>
+                    <li><a href="#about" class="hover:text-gray-400">About Us</a></li>
+                    <li><a href="#portfolio" class="hover:text-gray-400">Portfolio</a></li>
+                    <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="text-center py-20 bg-white">
+        <h2 class="text-4xl font-bold text-gray-800">Creative Designs for Your Business</h2>
+        <p class="mt-4 text-gray-600 text-lg">We offer professional design services to bring your ideas to life.</p>
+        <a href="#contact" class="mt-6 inline-block bg-blue-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700">Get Started</a>
+    </section>
+    
+    <section id="services" class="py-20 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-8 mt-10 px-6">
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">CV Design - Rs. 200</h3>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Youtube Thumbnail Design - Rs. 200</h3>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Logo Design - Rs. 500</h3>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Poster & Banner Design - Rs. 750</h3>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Name Board Design - Rs. 1000</h3>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Invitation & Business Card Design - Rs. 500</h3>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Handout Design - Rs. 1,500 - Rs. 950</h3>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Book Mark Design - Rs. 1,000</h3>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Cover Pages Design - Rs. 900</h3>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Social Media Post Design - Rs. 650</h3>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Sinhala Type Setting (A4) - Rs. 75</h3>
+                </div>
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Certificate Design - Rs. 750</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="text-center py-10">
+        <form id="orderForm" class="bg-white p-6 rounded-lg shadow-md max-w-lg mx-auto">
+            <label class="block mb-2 font-bold">Your Name</label>
+            <input type="text" id="name" class="w-full p-2 border rounded mb-4" required>
+
+            <label class="block mb-2 font-bold">Select Service</label>
+            <select id="service" class="w-full p-2 border rounded mb-4">
+                <option value="Logo Design">Logo Design - Rs. 500</option>
+                <option value="Poster Design">Poster Design - Rs. 750</option>
+                <option value="Business Card">Business Card - Rs. 500</option>
+            </select>
+
+            <label class="block mb-2 font-bold">Additional Notes</label>
+            <textarea id="notes" class="w-full p-2 border rounded mb-4"></textarea>
+
+            <button type="button" onclick="sendOrder()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                Place Order
+            </button>
+        </form>
+    </section>
+    
+    <script>
+        function sendOrder() {
+            let name = document.getElementById("name").value;
+            let service = document.getElementById("service").value;
+            let notes = document.getElementById("notes").value;
+            
+            let message = `Hello, I want to place an order!%0A%0AName: ${name}%0AService: ${service}%0ANotes: ${notes}`;
+            
+            let whatsappURL = `https://wa.me/94772298447?text=${message}`;
+            
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+    
+    <footer class="bg-black text-white text-center py-6 mt-10">
+        <p>&copy; 2025 Oshiya Design Lab. All rights reserved.</p>
+    </footer>
+</body>
+</html>
